@@ -1,7 +1,7 @@
 import urllib.parse
 import requests
 import json
-
+from time import sleep
 
 def checkApi(url) -> bool:
     if not url:
@@ -59,7 +59,7 @@ def getGachaLogs(url: str, gachaTypeId: str, gachaTypeDict: dict) -> list:
         for i in gacha:
             gachaList.append(i)
         end_id = j["data"]["list"][-1]["id"]
-
+        sleep(0.5)
     return gachaList
 
 
